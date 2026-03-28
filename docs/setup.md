@@ -11,6 +11,12 @@
 uv sync --dev
 ```
 
+If your environment is configured with a private package index and dependency resolution fails, run:
+
+```bash
+UV_DEFAULT_INDEX=https://pypi.org/simple uv sync --dev
+```
+
 ## Data Directory
 
 The application stores local state in `.autoresearch/` under the current working directory by default.
@@ -33,10 +39,10 @@ The data directory contains:
 
 ```bash
 uv run autoresearch domain list
-uv run autoresearch experiment create --file examples/synthetic/experiment.json
-uv run autoresearch experiment list
-uv run autoresearch experiment run <experiment-id>
-uv run autoresearch run list
+uv run autoresearch experiment create --file examples/synthetic/experiment.json --data-dir /tmp/autoresearch-demo
+uv run autoresearch experiment list --data-dir /tmp/autoresearch-demo
+uv run autoresearch experiment run <experiment-id> --data-dir /tmp/autoresearch-demo
+uv run autoresearch run list --data-dir /tmp/autoresearch-demo
 ```
 
 ## Run the API

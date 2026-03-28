@@ -14,14 +14,36 @@ This repository currently ships a Python scaffold with:
 
 ```bash
 uv sync --dev
-uv run autoresearch experiment create --file examples/synthetic/experiment.json
-uv run autoresearch experiment list
-uv run autoresearch experiment run <experiment-id>
-uv run autoresearch run list
-uv run autoresearch serve --port 8000
 ```
 
-By default the app stores state in `.autoresearch/` under the current working directory. Override it with `AUTORESEARCH_DATA_DIR=/path/to/data`.
+If your environment is pinned to a private package index, use:
+
+```bash
+UV_DEFAULT_INDEX=https://pypi.org/simple uv sync --dev
+```
+
+## Quick Demo
+
+Use an isolated data directory so the example stays self-contained:
+
+```bash
+uv run autoresearch domain list
+
+uv run autoresearch experiment create \
+  --file examples/synthetic/experiment.json \
+  --data-dir /tmp/autoresearch-demo \
+  --json
+
+uv run autoresearch experiment run <experiment-id> \
+  --data-dir /tmp/autoresearch-demo \
+  --json
+
+uv run autoresearch run list \
+  --data-dir /tmp/autoresearch-demo \
+  --json
+```
+
+By default the app stores state in `.autoresearch/` under the current working directory. Override it with `AUTORESEARCH_DATA_DIR=/path/to/data` or `--data-dir /path/to/data`.
 
 ## Repository Map
 
