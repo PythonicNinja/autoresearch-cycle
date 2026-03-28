@@ -1,0 +1,41 @@
+[build-system]
+requires = ["hatchling>=1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "autoresearch-cycle"
+version = "0.1.0"
+description = "Reference implementation of the autoresearch optimization loop."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "fastapi>=0.115,<1.0",
+  "jsonschema>=4.23,<5.0",
+  "pydantic>=2.10,<3.0",
+  "typer>=0.15,<1.0",
+  "uvicorn>=0.34,<1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "httpx>=0.28,<1.0",
+  "pytest>=8.3,<9.0",
+  "ruff>=0.11,<1.0",
+]
+
+[project.scripts]
+autoresearch = "autoresearch_cycle.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/autoresearch_cycle"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+ignore = ["B008", "UP017"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
