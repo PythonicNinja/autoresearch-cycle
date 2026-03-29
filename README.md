@@ -36,7 +36,7 @@ Run one autoresearch loop:
 
 ```bash
 cd /Users/pythonicninja/PycharmProjects/autoresearch-cycle
-./examples/blogui/run.sh
+uv run python examples/blogui/run.py
 ```
 
 To switch the optimizer, edit `OPTIMIZER_AGENT` in `examples/blogui/config.py`. Supported values are `"claude"` and `"codex"`.

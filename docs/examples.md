@@ -38,7 +38,7 @@ Run the experiment:
 
 ```bash
 cd /Users/pythonicninja/PycharmProjects/autoresearch-cycle
-./examples/blogui/run.sh
+uv run python examples/blogui/run.py
 ```
 
 The script will:
