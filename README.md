@@ -51,7 +51,8 @@ By default the app stores state in `.autoresearch/` under the current working di
 - `docs/setup.md` - local setup, development, and runtime notes
 - `docs/interfaces.md` - core models, storage layout, CLI, and HTTP interfaces
 - `docs/examples.md` - runnable walkthroughs for the synthetic demo
-- `examples/synthetic/` - example payloads and output snapshots
+- `examples/synthetic/` - minimal API payloads and output snapshots
+- `examples/blogui/` - end-to-end UI autoresearch example
 - `src/autoresearch_cycle/` - package source
 - `tests/` - unit and integration tests
 

@@ -109,3 +109,4 @@ curl http://127.0.0.1:8000/runs/<run-id>
 - `examples/synthetic/experiment.json` - input payload for CLI and API creation
 - `examples/synthetic/baseline-policy.json` - baseline policy used by the example
 - `examples/synthetic/expected-run.json` - real snapshot of one example run response
+- `examples/blogui/` - runnable blog UI autoresearch example with `config.py`, `domain.py`, `main.py`, and `run.sh`
