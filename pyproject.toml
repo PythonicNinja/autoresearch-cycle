@@ -26,6 +26,13 @@ dev = [
 [project.scripts]
 autoresearch = "autoresearch_cycle.cli:main"
 
+[tool.uv]
+
+[[tool.uv.index]]
+name = "pypi"
+url = "https://pypi.org/simple"
+default = true
+
 [tool.hatch.build.targets.wheel]
 packages = ["src/autoresearch_cycle"]
 
